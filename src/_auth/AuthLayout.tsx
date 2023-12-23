@@ -1,11 +1,11 @@
-import DarkModeButton from "@/components/DarkMode";
+// import DarkModeButton from "@/components/DarkMode";
 import { Navigate, Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
   const isAuthenticated = false;
   return (
-    <div className="flex flex-row flex-1">
-      <DarkModeButton className="absolute left-1 top-2" />
+    <>
+      {/* <DarkModeButton className="absolute left-1 top-2" /> */}
       {isAuthenticated ? (
         <Navigate to="/" />
       ) : (
@@ -16,12 +16,12 @@ const AuthLayout = () => {
 
           <img
             src="/assets/images/side-img.svg"
-            alt="log"
+            alt="logo"
             className="hidden xl:block h-screen W-1/2 object-cover bg-no-repeat"
           />
         </>
       )}
-    </div>
+    </>
   );
 };
 

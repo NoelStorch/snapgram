@@ -4,7 +4,8 @@ import { Home } from './_root/pages'
 import SigninForm from './_auth/forms/SigninForm'
 import SignupForm from './_auth/forms/SignupForm'
 import AuthLayout from './_auth/AuthLayout'
-import RootLaout from './_root/RootLaout'
+import RootLaout from './_root/RootLayout'
+import { Toaster } from './components/ui/toaster'
 
 
 const App = () => {
@@ -13,8 +14,8 @@ const App = () => {
         <Routes>
           {/* public routes */}
           <Route element={<AuthLayout />}>
-            <Route path='/sign-in' element={<SigninForm />} />
-            <Route path='/sign-up' element={<SignupForm />} />
+            <Route path='/iniciar-sesion' element={<SigninForm />} />
+            <Route path='/registrarse' element={<SignupForm />} />
           </Route>
           {/* private routes */}
           <Route element={<RootLaout />}>
@@ -22,6 +23,7 @@ const App = () => {
           </Route>
 
         </Routes>
+        <Toaster   />
     </main>
   )
 }
