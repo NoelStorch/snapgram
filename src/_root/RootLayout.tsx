@@ -1,16 +1,21 @@
-import { Button } from "@/components/ui/button"
-import { toast } from "@/components/ui/use-toast"
+import BottomBar from '@/components/shared/BottomBar'
+import LeftSideBar from '@/components/shared/LeftSideBar'
+import Topbar from '@/components/shared/Topbar'
+import { Outlet } from 'react-router-dom'
 
 const RootLaout = () => {
-  const handleClick = () => {
-    toast({
-      title: 'Clickeando'
-    })
-  }
+  
   return (
-    <div>
-      RootLaout
-      <Button  onClick={handleClick}>Button</Button>
+    <div className='w-full md:flex'>
+      <Topbar />
+      <LeftSideBar />
+      
+      <section className='flex flex-1 h-full'>
+        <Outlet />
+      </section>
+
+      <BottomBar />
+      
     </div>
   )
 }

@@ -16,8 +16,8 @@ const INITIAL_STATE = {
     user: INITIAL_USER,
     isLoading: false,
     isAuthenticated: false,
-    setUser: () => {},
-    setIsAuthenticated: () => {},
+    setUser: async () => {},
+    setIsAuthenticated: async () => {},
     checkAuthUser: async () => false as boolean
 }
 
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         ) navigate('/iniciar-sesion')
 
         checkAuthUser()
-    }, [])
+    }, [navigate])
     
     const value = {
         user,
